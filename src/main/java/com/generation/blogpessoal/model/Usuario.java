@@ -47,6 +47,7 @@ public class Usuario {
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 	
+	//Metodos contrutores
 	
 	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
 		this.id = id;
@@ -58,6 +59,7 @@ public class Usuario {
 	
 	public Usuario() { }
 
+	/* Insira os Getters and Setters */
 
 	public Long getId() {
 		return this.id;
@@ -106,4 +108,5 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+
 }
