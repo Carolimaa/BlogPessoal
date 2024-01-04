@@ -4,13 +4,13 @@ import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import io.swagger.v3.oas.models.responses.ApiResponse;
+import io.swagger.v3.oas.models.responses.ApiResponses;
 
 @Configuration
 public class SwaggerConfig {
@@ -26,13 +26,15 @@ public class SwaggerConfig {
 								.name("Caroline Lima")
 								.url("linkedin.com/in/Carolimaa"))
 						.contact(new Contact()
-								.name("Caroline Lima")
+								.name("Caroline Lima ")
 								.url("https://github.com/Carolimaa")
 								.email("carolniver12@gmail.com")))
 				.externalDocs(new ExternalDocumentation()
 						.description("Github")
 						.url("https://github.com/Carolimaa/BlogPessoal"));
-	}	
+	}
+	
+	
 	@Bean
 	public OpenApiCustomizer customerGlobalHeaderOpenApiCustomiser() {
 
@@ -52,11 +54,12 @@ public class SwaggerConfig {
 
 			}));
 		};
-
 	}
 
 	private ApiResponse createApiResponse(String message) {
 
 		return new ApiResponse().description(message);
-}
+
+	}
+	
 }
